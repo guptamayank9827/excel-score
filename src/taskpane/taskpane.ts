@@ -21,7 +21,7 @@ export async function getStartRowNumber(context, sheet, startColumnChar) {
       let rangeValues = rangeCells.values;
 
       for(let i = 0; i < rangeValues.length; i++) {
-        if(!rangeValues[i][0] || rangeValues[i][0].length == 0 || rangeValues[i][0] === "") {
+        if(rangeValues[i][0] === "" || rangeValues[i][0].length == 0) {
           rowNumber = i+1;
           break;
         }
